@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+           const p=new Promise(function(resolve,reject){
+                let c=-10;
+                    if(c>0){
+                         resolve('positive');
+                    }else{
+                         reject('negative');
+                    }
+           });
+
+           p.then(function(text){ alert(text)},function(text){ console.log(text)
+                        return text;})
+           .then((text)=>{ alert(text)})
+           .then(()=>{ alert('aaaa')});
+
+
+            var a=100;
+
+           function sum(a,b){
+             return a+b;
+           }
+
+           const sum2=(a,b)=>{return a+b};
+
+           alert(sum2(2,5));
+
+
+
+         const obj={
+
+              a:10,
+              val:function(){
+                   console.log(this);
+              },
+              val2:()=>{console.log(this)}
+         }
+        obj.val();
+        obj.val2.call(obj);
+    </script>
+</body>
+</html>

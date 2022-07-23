@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title"></h1>
+    <p id="status"></p>
+    <script>
+          
+          function callajax(){
+
+                  const xhttp=new XMLHttpRequest();
+                    
+                  xhttp.onload=function(){
+                     console.log(this.responseText);
+                     const j=JSON.parse(this.responseText);
+                     document.getElementById('title').innerHTML=j.title;
+                     document.getElementById('status').innerHTML=j.completed;
+                  }
+
+
+                   xhttp.open('GET','https://jsonplaceholder.typicode.com/todos/1');
+                   xhttp.send();
+
+
+          }
+          //callajax();
+
+          function callajax2(callback){
+
+const xhttp=new XMLHttpRequest();
+  
+xhttp.onload=function(){
+   console.log(this.responseText);
+   const j=JSON.parse(this.responseText);
+   debugger;
+   callback(j);
+   
+}
+
+
+ xhttp.open('GET','https://jsonplaceholder.typicode.com/todos/1');
+ xhttp.send();
+
+ return 5;
+}
+function display(j){
+    document.getElementById('title').innerHTML=j.title;
+   document.getElementById('status').innerHTML=j.completed;
+}
+
+alert(callajax2(display));
+    </script>
+</body>
+</html>

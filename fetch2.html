@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <button onclick="getapi()">Click</button>
+     <div id="html"></div>
+     <script>
+         function  getapi(){
+            fetch('http://localhost/js/js9pmnew/response.php')
+            .then((response)=>response.text())
+            .then(function(html){
+                  document.getElementById('html').innerHTML=html;
+            })
+         }
+
+        function display(val){
+             alert(val)
+        }
+
+        function display2(val){
+             document.getElementById('html').innerHTML=val;
+
+        }
+
+        function sum(a,b,callback){
+                  let sum=a+b;
+
+                  callback(sum);
+        }
+
+
+        sum(10,20,display);
+        sum(10,20,display2);
+
+
+
+
+
+
+     </script>
+</body>
+</html>

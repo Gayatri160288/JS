@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box .para{
+            color:brown;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="name" onkeyup="copytext()">
+    <p id="p">
+        helooooo
+    </p>
+    <p class="para">
+        helooooo
+    </p>
+    <p class="para">
+        helooooo
+    </p>
+    <p>
+        helooooo
+    </p>
+    <p>
+        helooooo
+    </p>
+    <p>
+        helooooo
+    </p>
+
+    <div class="box">
+        <p class="para">Box division</p>
+    </div>
+    <div class="box">
+        <p class="para">Box division</p>
+    </div>
+    <div class="box">
+        <p class="para">Box division</p>
+    </div>
+        <button onclick="changetext()">Button</button>
+        <button onclick="classse()">get by class</button>
+
+    <script>
+           function changetext(){
+            document.getElementById('p').innerHTML="helllllllllllllllllllllllll";
+            document.getElementById('p').style.color="red";
+
+            console.log(document.getElementById('p'));
+            console.log(document.getElementsByTagName('p'));
+            document.getElementsByTagName('p').innerHTML="js";
+            var c=document.getElementsByTagName('p');
+            for(let x of c){
+                 x.innerHTML="js";
+                 x.style.color="green";
+            }
+
+           }
+           function copytext(){
+             document.getElementById('p').innerHTML=document.getElementById('name').value;
+           }
+           var ar=[5,6];
+           function classse(){
+                 console.log(document.getElementsByClassName('para'));
+
+
+                 // qu
+                console.log(document.querySelector('.box .para'));
+                console.log(document.querySelectorAll('.box .para'));
+           }
+
+
+           var ob={
+               name:"aaa";
+           }
+           
+           console.log(ob.name);
+    </script>
+
+</body>
+</html>
